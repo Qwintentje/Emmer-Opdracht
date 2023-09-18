@@ -1,6 +1,6 @@
 ﻿namespace Emmer_Opdracht;
 
-public class Container
+public abstract class Container
 {
     private int capaciteit;
     private int inhoud;

@@ -1,10 +1,10 @@
 ﻿using Emmer_Opdracht;
 
-Emmer emmer1 = new Emmer(2600);
-emmer1.UpdateInhoud(2000);
+Emmer emmer1 = new Emmer(2500);
+emmer1.UpdateInhoud(100);
 emmer1.Print();
 
-Emmer emmer2 = new Emmer(2500);
+Emmer emmer2 = new Emmer(300);
 emmer2.UpdateInhoud(0);
 emmer2.Print();
 
@@ -15,6 +15,7 @@ emmer2.Print();
 emmer2.GietOver(emmer1);
 emmer1.Print();
 emmer2.Print();
+
 
 
 
