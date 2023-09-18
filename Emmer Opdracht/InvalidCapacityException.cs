@@ -2,13 +2,8 @@
 
 public class InvalidCapacityException : Exception
 {
-    public int OnjuisteCapaciteit { get; }
-    public string JuisteCapaciteit { get; }
-
-    public InvalidCapacityException(int onjuisteCapaciteit, string juisteCapaciteit)
-        : base($"Ongeldige capaciteit. Onjuiste capaciteit: {onjuisteCapaciteit}, Juiste capaciteit: {juisteCapaciteit}")
+    public InvalidCapacityException(int onjuisteCapaciteit, string juisteCapaciteitMessage)
+        : base($"Ongeldige capaciteit. Onjuiste capaciteit: {onjuisteCapaciteit}, Juiste capaciteit: {juisteCapaciteitMessage}")
     {
-        OnjuisteCapaciteit = onjuisteCapaciteit;
-        JuisteCapaciteit = juisteCapaciteit;
     }
 }
