@@ -12,7 +12,7 @@ public class Regenton : Container
         }
         else
         {
-            throw new Exception("Ongeldige capaciteit voor regenton. Kies uit: 80, 100 of 120.");
+            throw new InvalidCapacityException(capaciteit, "80, 100 of 120.");
         }
     }
 

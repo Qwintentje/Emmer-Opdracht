@@ -12,7 +12,7 @@ public class Emmer : Container
         {
             if (value > 2500)
             {
-                throw new Exception("De capaciteit van een emmer mag niet boven 2500 zijn.");
+                throw new InvalidCapacityException(value, "kleiner of gelijk aan 2500");
             }
             if (value < 10)
             {

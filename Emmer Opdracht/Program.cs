@@ -1,6 +1,6 @@
 ﻿using Emmer_Opdracht;
 
-Emmer emmer1 = new Emmer(2500);
+Emmer emmer1 = new Emmer(2600);
 emmer1.UpdateInhoud(2000);
 emmer1.Print();
 

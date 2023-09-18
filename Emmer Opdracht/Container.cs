@@ -16,7 +16,7 @@ public class Container
             {
                 capaciteit = value;
             }
-            else throw new Exception("Capaciteit kan niet negatief zijn.");
+            else throw new InvalidCapacityException(value, "Groter dan 0");
         }
     }
     public int Inhoud
