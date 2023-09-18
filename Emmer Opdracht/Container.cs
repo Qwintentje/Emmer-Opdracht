@@ -10,9 +10,13 @@ public class Container
         {
             return capaciteit;
         }
-        set
+        protected set
         {
-            if (value >= 0) { capaciteit = value; } else throw new Exception("Capaciteit kan niet negatief zijn.");
+            if (value >= 0)
+            {
+                capaciteit = value;
+            }
+            else throw new Exception("Capaciteit kan niet negatief zijn.");
         }
     }
     public int Inhoud
@@ -23,7 +27,17 @@ public class Container
         }
         set
         {
-            if (value >= 0) { inhoud = value; } else throw new Exception("Inhoud kan niet negatief zijn.");
+            if (value < 0)
+            {
+                throw new Exception("Inhoud kan niet negatief zijn.");
+            }
+            else if (inhoud + value > capaciteit)
+            {
+                throw new Exception("Inhoud kan niet groter zijn dan de capaciteit");
+            }
+            {
+                inhoud = value;
+            }
         }
     }
 
@@ -32,9 +46,11 @@ public class Container
         Inhoud += amount;
     }
 
-    public void Empty()
+    public void LeegInhoud()
     {
         Inhoud = 0;
     }
+
+
 }
 

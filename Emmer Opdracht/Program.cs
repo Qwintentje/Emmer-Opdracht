@@ -1,21 +1,23 @@
 ﻿using Emmer_Opdracht;
 
-Emmer emmer = new Emmer();
-emmer.Capaciteit = 5;
+Emmer emmer1 = new Emmer(2500);
+emmer1.UpdateInhoud(2000);
+emmer1.Print();
 
-Olievat olievat = new Olievat();
-olievat.Inhoud = 100;
-olievat.Capaciteit = 50;
+Emmer emmer2 = new Emmer(2500);
+emmer2.UpdateInhoud(0);
+emmer2.Print();
 
-Regenton regenton = new Regenton();
-regenton.Inhoud = 105;
-regenton.Capaciteit = 500;
+emmer1.GietOver(emmer2);
+emmer1.Print();
+emmer2.Print();
 
-Console.WriteLine(regenton.Inhoud + " " + olievat.Capaciteit + " " + emmer.Capaciteit);
+emmer2.GietOver(emmer1);
+emmer1.Print();
+emmer2.Print();
 
-regenton.UpdateInhoud(10);
-Console.WriteLine(regenton.Inhoud + " " + olievat.Capaciteit + " " + emmer.Capaciteit);
 
-regenton.Empty();
 
-Console.WriteLine(regenton.Inhoud + " " + olievat.Capaciteit + " " + emmer.Capaciteit);
+
+
+
