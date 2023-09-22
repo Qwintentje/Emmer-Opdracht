@@ -5,6 +5,11 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emmer Opdracht", "Emmer Opdracht\Emmer Opdracht.csproj", "{CCA1FD9E-91DE-443E-8D43-00802B47C444}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{20FF1090-7425-4BA0-AE2B-08AF69B9F6C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CCA1FD9E-91DE-443E-8D43-00802B47C444} = {CCA1FD9E-91DE-443E-8D43-00802B47C444}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{CCA1FD9E-91DE-443E-8D43-00802B47C444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCA1FD9E-91DE-443E-8D43-00802B47C444}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCA1FD9E-91DE-443E-8D43-00802B47C444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FF1090-7425-4BA0-AE2B-08AF69B9F6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FF1090-7425-4BA0-AE2B-08AF69B9F6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FF1090-7425-4BA0-AE2B-08AF69B9F6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FF1090-7425-4BA0-AE2B-08AF69B9F6C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
