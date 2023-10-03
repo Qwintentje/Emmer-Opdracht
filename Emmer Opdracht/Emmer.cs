@@ -2,6 +2,7 @@
 
 public class Emmer : Container
 {
+
     public new int Capaciteit
     {
         get
@@ -37,12 +38,13 @@ public class Emmer : Container
 
     public void GietOver(Emmer NieuweEmmer)
     {
+        Console.WriteLine("GietOver");
         NieuweEmmer.Inhoud += Inhoud;
         Inhoud = 0;
     }
 
     public void Print()
     {
-        Console.WriteLine("Emmer, Capaciteit: " + Capaciteit + " Inhoud: " + Inhoud);
+        Console.WriteLine($"{Naam}, Capaciteit: {Capaciteit} Inhoud: {Inhoud}");
     }
 }

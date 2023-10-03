@@ -18,6 +18,6 @@ public class Regenton : Container
 
     public void Print()
     {
-        Console.WriteLine("Regenton, Capaciteit: " + Capaciteit + " Inhoud: " + Inhoud);
+        Console.WriteLine("# Regenton, Capaciteit: " + Capaciteit + " Inhoud: " + Inhoud);
     }
 }

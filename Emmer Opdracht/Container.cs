@@ -2,6 +2,7 @@
 
 public abstract class Container
 {
+    public string Naam { get; set; } = "";
     private int capaciteit;
     private int inhoud;
     public int Capaciteit
@@ -43,11 +44,13 @@ public abstract class Container
 
     public void UpdateInhoud(int amount)
     {
+        Console.WriteLine("UpdateInhoud");
         Inhoud += amount;
     }
 
     public void LeegInhoud()
     {
+        Console.WriteLine("LeegInhoud");
         Inhoud = 0;
     }
 
