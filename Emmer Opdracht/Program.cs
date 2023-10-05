@@ -1,28 +1,12 @@
-﻿using Emmer_Opdracht;
+﻿
+/*Emmer emmer1 = new Emmer(500);
+emmer1.UpdateInhoud(499);
+emmer1.UpdateInhoud(1); //Triggers full event
 
-Emmer emmer1 = new Emmer(2500);
-emmer1.Naam = "Emmer 1";
-emmer1.Print();
-emmer1.UpdateInhoud(100);
-emmer1.Print();
+emmer1.UpdateInhoud(5);*/
 
-Emmer emmer2 = new Emmer(300);
-emmer2.Naam = "Emmer 2";
-emmer2.Print();
-emmer2.UpdateInhoud(1);
-emmer2.Print();
-
-emmer1.GietOver(emmer2);
-emmer1.Print();
-emmer2.Print();
-
-emmer2.GietOver(emmer1);
-emmer1.Print();
-emmer2.Print();
-
-
-
-
-
-
+Olievat olievat = new Olievat();
+olievat.UpdateInhoud(150);
+olievat.UpdateInhoud(9);
+olievat.UpdateInhoud(100);
 

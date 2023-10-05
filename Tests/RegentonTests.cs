@@ -1,4 +1,6 @@
-﻿namespace Tests;
+﻿using Emmer_Opdracht.Exceptions;
+
+namespace Tests;
 
 public class RegentonTests
 {

@@ -1,4 +1,6 @@
 
+using Emmer_Opdracht.Exceptions;
+
 namespace Tests;
 
 public class EmmerTests

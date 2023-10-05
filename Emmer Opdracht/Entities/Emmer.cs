@@ -1,8 +1,7 @@
-﻿namespace Emmer_Opdracht;
+﻿namespace Emmer_Opdracht.Entities;
 
 public class Emmer : Container
 {
-
     public new int Capaciteit
     {
         get
@@ -26,13 +25,15 @@ public class Emmer : Container
         }
     }
 
-    public Emmer()
+    public Emmer() : base()
     {
+        CType = ContainerType.Emmer;
         Capaciteit = 12;
     }
 
-    public Emmer(int capacitieit)
+    public Emmer(int capacitieit) : base()
     {
+        CType = ContainerType.Emmer;
         Capaciteit = capacitieit;
     }
 
@@ -41,10 +42,5 @@ public class Emmer : Container
         Console.WriteLine("GietOver");
         NieuweEmmer.Inhoud += Inhoud;
         Inhoud = 0;
-    }
-
-    public void Print()
-    {
-        Console.WriteLine($"{Naam}, Capaciteit: {Capaciteit} Inhoud: {Inhoud}");
     }
 }

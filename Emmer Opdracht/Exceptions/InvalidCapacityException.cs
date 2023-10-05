@@ -1,4 +1,4 @@
-﻿namespace Emmer_Opdracht;
+﻿namespace Emmer_Opdracht.Exceptions;
 
 public class InvalidCapacityException : Exception
 {

@@ -1,4 +1,4 @@
-﻿namespace Emmer_Opdracht;
+﻿namespace Emmer_Opdracht.Entities;
 
 public class Regenton : Container
 {
@@ -8,16 +8,12 @@ public class Regenton : Container
     {
         if (AllowedCapacities.Contains(capaciteit))
         {
+            CType = ContainerType.Regenton;
             Capaciteit = capaciteit;
         }
         else
         {
             throw new InvalidCapacityException(capaciteit, "80, 100 of 120.");
         }
-    }
-
-    public void Print()
-    {
-        Console.WriteLine("# Regenton, Capaciteit: " + Capaciteit + " Inhoud: " + Inhoud);
     }
 }
