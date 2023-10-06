@@ -12,11 +12,13 @@ public class ContainerService
         Console.WriteLine($"Container overstroomd met {e.OverstroomAmount}");
     }
 
-    public void OnBijnaOverstroom(object sender, BijnaOverstroomEventArgs e)
+    public void OnBijnaOverstroom(object sender, OverstroomEventArgs e)
     {
+        //Check if sender is a container (Emmer, Olievat or Regenton)
         if (sender is Container container)
         {
             bool isValidChoice = false;
+            //"do" something until isValidChoice is true, see line 53
             do
             {
                 Console.WriteLine($"{container.CType} is aan het overstromen met {e.OverstroomAmount} liter! Oh nee!");
@@ -35,14 +37,11 @@ public class ContainerService
                         var amountInput = Console.ReadLine();
                         if (int.TryParse(amountInput, out int amount))
                         {
-                            if (amount > e.OverstroomAmount || amount < 0) break;
+                            if (amount > e.OverstroomAmount || amount <= 0) break; //Break if given amount is not valid
                             Console.WriteLine($"Overstromen met {amount} hoeveelheid!");
-                            isValidChoice = true;
+                            isValidChoice = true; // Exit the loop
                         }
-                        else
-                        {
-                            Console.WriteLine("Ongeldige invoer voor hoeveelheid. Probeer opnieuw.");
-                        }
+                        else Console.WriteLine("Ongeldige invoer voor hoeveelheid. Probeer opnieuw.");
                         break;
                     default:
                         Console.WriteLine("Ongeldige keuze. Probeer opnieuw.");

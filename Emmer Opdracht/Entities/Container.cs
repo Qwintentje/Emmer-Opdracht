@@ -5,11 +5,16 @@ public abstract class Container
     private int capaciteit;
     private int inhoud;
     private ContainerService containerService = new ContainerService();
+
+    //PUBLIC for testing, should be set to private in production
     public event EventHandler ContainerVol;
+
     public delegate void OverstroomEventHandler(object sender, OverstroomEventArgs e);
     public event OverstroomEventHandler ContainerOverstroom;
-    public delegate void BijnaOverstroomEventHandler(object sender, BijnaOverstroomEventArgs e);
+
+    public delegate void BijnaOverstroomEventHandler(object sender, OverstroomEventArgs e);
     public event BijnaOverstroomEventHandler BijnaOverstroom;
+
     private ContainerType _cType = ContainerType.Onbekend;
     public ContainerType CType
     {
@@ -31,16 +36,20 @@ public abstract class Container
     public int Inhoud
     {
         get => inhoud;
-        set
+        protected set
         {
             if (value < 0) throw new Exception("Inhoud kan niet negatief zijn.");
+            //If container is exactly full trigger ContainerVol event
             if (value == capaciteit && ContainerVol != null) ContainerVol(this, new EventArgs());
+            //If container is overflowing
             if (value > capaciteit)
             {
+                //Trigger Overstroom event
                 if (ContainerOverstroom != null) ContainerOverstroom(this, new OverstroomEventArgs { OverstroomAmount = value - capaciteit });
                 if (this is Container container)
                 {
-                    if (BijnaOverstroom != null) BijnaOverstroom(container, new BijnaOverstroomEventArgs { OverstroomAmount = value - capaciteit });
+                    //Trigger BijnaOverstroom event, where you can set the amount that overflows or cancel it
+                    if (BijnaOverstroom != null) BijnaOverstroom(container, new OverstroomEventArgs { OverstroomAmount = value - capaciteit });
                 }
                 inhoud = capaciteit;
             }

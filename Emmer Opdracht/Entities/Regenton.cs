@@ -11,9 +11,6 @@ public class Regenton : Container
             CType = ContainerType.Regenton;
             Capaciteit = capaciteit;
         }
-        else
-        {
-            throw new InvalidCapacityException(capaciteit, "80, 100 of 120.");
-        }
+        else throw new InvalidCapacityException(capaciteit, "80, 100 of 120.");
     }
 }

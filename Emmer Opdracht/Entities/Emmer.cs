@@ -4,24 +4,12 @@ public class Emmer : Container
 {
     public new int Capaciteit
     {
-        get
-        {
-            return base.Capaciteit;
-        }
+        get => base.Capaciteit;
         set
         {
-            if (value > 2500)
-            {
-                throw new InvalidCapacityException(value, "kleiner of gelijk aan 2500");
-            }
-            if (value < 10)
-            {
-                base.Capaciteit = 10;
-            }
-            else
-            {
-                base.Capaciteit = value;
-            }
+            if (value > 2500) throw new InvalidCapacityException(value, "kleiner of gelijk aan 2500");
+            if (value < 10) base.Capaciteit = 10;
+            else base.Capaciteit = value;
         }
     }
 
