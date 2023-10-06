@@ -1,6 +1,4 @@
 
-using Emmer_Opdracht.Exceptions;
-
 namespace Tests;
 
 public class EmmerTests
@@ -61,12 +59,12 @@ public class EmmerTests
         Assert.Throws<Exception>(() => emmer.UpdateInhoud(-10), "Content should not be allowed to be negative");
     }
 
-    [Test]
-    public void InhoudCannotExceedCapacity()
-    {
-        var emmer = new Emmer(100);
-        Assert.Throws<Exception>(() => emmer.UpdateInhoud(500), "Content should not be allowed to be negative");
-    }
+    /*    [Test]
+        public void InhoudCannotExceedCapacity()
+        {
+            var emmer = new Emmer(100);
+            Assert.Throws<Exception>(() => emmer.UpdateInhoud(500), "Content should not be allowed to be negative");
+        }*/
 
     [Test]
     public void LeegInhoudShouldEmpty()

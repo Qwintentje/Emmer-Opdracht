@@ -2,5 +2,5 @@
 
 public class BijnaOverstroomEventArgs
 {
-    public int Amount { get; set; }
+    public int OverstroomAmount { get; set; }
 }

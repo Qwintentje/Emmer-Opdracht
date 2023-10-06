@@ -1,6 +1,4 @@
-﻿using Emmer_Opdracht.Entities;
-
-namespace Tests;
+﻿namespace Tests;
 
 public class OlievatTests
 {

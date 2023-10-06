@@ -5,11 +5,11 @@ public abstract class Container
     private int capaciteit;
     private int inhoud;
     private ContainerService containerService = new ContainerService();
-    private event EventHandler ContainerVol;
-    private delegate void OverstroomEventHandler(object sender, OverstroomEventArgs e);
-    private event OverstroomEventHandler ContainerOverstroom;
-    private delegate void BijnaOverstroomEventHandler(object sender, BijnaOverstroomEventArgs e);
-    private event BijnaOverstroomEventHandler BijnaOverstroom;
+    public event EventHandler ContainerVol;
+    public delegate void OverstroomEventHandler(object sender, OverstroomEventArgs e);
+    public event OverstroomEventHandler ContainerOverstroom;
+    public delegate void BijnaOverstroomEventHandler(object sender, BijnaOverstroomEventArgs e);
+    public event BijnaOverstroomEventHandler BijnaOverstroom;
     private ContainerType _cType = ContainerType.Onbekend;
     public ContainerType CType
     {
@@ -40,7 +40,7 @@ public abstract class Container
                 if (ContainerOverstroom != null) ContainerOverstroom(this, new OverstroomEventArgs { OverstroomAmount = value - capaciteit });
                 if (this is Container container)
                 {
-                    if (BijnaOverstroom != null) BijnaOverstroom(container, new BijnaOverstroomEventArgs { Amount = value - capaciteit });
+                    if (BijnaOverstroom != null) BijnaOverstroom(container, new BijnaOverstroomEventArgs { OverstroomAmount = value - capaciteit });
                 }
                 inhoud = capaciteit;
             }
@@ -72,5 +72,13 @@ public abstract class Container
         Console.WriteLine($"{CType}, Capaciteit: {Capaciteit} Inhoud: {Inhoud}");
 
     }
+}
+
+public enum ContainerType
+{
+    Onbekend,
+    Emmer,
+    Olievat,
+    Regenton
 }
 
