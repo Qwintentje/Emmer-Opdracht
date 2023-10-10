@@ -1,4 +1,3 @@
-
 namespace Tests;
 
 public class EmmerTests
@@ -34,7 +33,7 @@ public class EmmerTests
         var emmer1 = new Emmer(2500);
         var emmer2 = new Emmer(2500);
 
-        emmer1.Inhoud = 100;
+        emmer1.UpdateInhoud(100);
 
         emmer1.GietOver(emmer2);
 
@@ -59,6 +58,7 @@ public class EmmerTests
         Assert.Throws<Exception>(() => emmer.UpdateInhoud(-10), "Content should not be allowed to be negative");
     }
 
+    //Can not be tested because of the new events
     /*    [Test]
         public void InhoudCannotExceedCapacity()
         {
@@ -75,5 +75,4 @@ public class EmmerTests
         emmer.LeegInhoud();
         Assert.That(emmer.Inhoud, Is.EqualTo(0), "Emmer should be empty");
     }
-
 }
