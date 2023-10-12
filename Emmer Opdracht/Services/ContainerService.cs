@@ -21,15 +21,15 @@ public class ContainerService
             //"do" something until isValidChoice is true, see line 53
             do
             {
-                Console.WriteLine($"{container.CType} is aan het overstromen met {e.OverstroomAmount} liter! Oh nee!");
-                Console.WriteLine("1. Overstromen laten stoppen\n2. Overstromen met bepaalde hoeveelheid");
+                Console.WriteLine($"{container.CType} gaat overstromen met {e.OverstroomAmount} liter!");
+                Console.WriteLine($"1.Vullen van {container.CType} laten stoppen\n2.Overstromen met bepaalde hoeveelheid");
                 Console.WriteLine("Maak een keuze...");
 
                 var choice = Console.ReadLine();
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("Overstromen gestopt!");
+                        Console.WriteLine("Vullen gestopt!");
                         isValidChoice = true; // Exit the loop
                         break;
                     case "2":
@@ -40,6 +40,7 @@ public class ContainerService
                             if (amount > e.OverstroomAmount || amount <= 0) break; //Break if given amount is not valid
                             Console.WriteLine($"Overstromen met {amount} hoeveelheid!");
                             isValidChoice = true; // Exit the loop
+                            container.Inhoud = container.Capaciteit;
                         }
                         else Console.WriteLine("Ongeldige invoer voor hoeveelheid. Probeer opnieuw.");
                         break;

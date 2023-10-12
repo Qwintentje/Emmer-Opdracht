@@ -36,22 +36,23 @@ public abstract class Container
     public int Inhoud
     {
         get => inhoud;
-        protected set
+        set
         {
             if (value < 0) throw new Exception("Inhoud kan niet negatief zijn.");
             //If container is exactly full trigger ContainerVol event
             if (value == capaciteit && ContainerVol != null) ContainerVol(this, new EventArgs());
-            //If container is overflowing
-            if (value > capaciteit)
+            if (value > capaciteit && Inhoud == Capaciteit)
             {
-                //Trigger Overstroom event
                 if (ContainerOverstroom != null) ContainerOverstroom(this, new OverstroomEventArgs { OverstroomAmount = value - capaciteit });
+            }
+            //If container is overflowing
+            else if (value > capaciteit)
+            {
                 if (this is Container container)
                 {
                     //Trigger BijnaOverstroom event, where you can set the amount that overflows or cancel it
                     if (BijnaOverstroom != null) BijnaOverstroom(container, new OverstroomEventArgs { OverstroomAmount = value - capaciteit });
                 }
-                inhoud = capaciteit;
             }
             else inhoud = value;
         }
