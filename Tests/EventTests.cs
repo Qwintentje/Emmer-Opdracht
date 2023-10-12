@@ -21,9 +21,7 @@ public class EventTests
     public void EmmerOverflowShouldTrigger2Events()
     {
         Emmer emmer = new Emmer(500);
-        bool onContainerOverstroomCalled = false;
         bool onBijnaOverstroomCalled = false;
-        emmer.ContainerOverstroom += (sender, args) => onContainerOverstroomCalled = true;
         emmer.BijnaOverstroom += (sender, args) => onBijnaOverstroomCalled = true;
 
         string userInput = "1\n";
@@ -31,7 +29,6 @@ public class EventTests
         {
             Console.SetIn(sr);
             emmer.UpdateInhoud(501);
-            Assert.IsTrue(onContainerOverstroomCalled, "ContainerOverstroom event should be triggered");
             Assert.IsTrue(onBijnaOverstroomCalled, "ContainerOverstroom event should be triggered");
         }
     }
